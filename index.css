@@ -134,24 +134,12 @@ body {
     z-index: 1000; /* Ensure it's always on top */
 }
 
-@media (max-width: 600px) {
-    #message-form {
-        width: 100%; /* Ensure the form spans the full width */
-        left: 0; /* Align to the left edge */
-        padding: 10px; /* Add consistent padding */
-        box-sizing: border-box; /* Include padding in width calculations */
+@media (max-width: 768px) {
+    .message-input {
+      width: 90%; /* Adjust width for smaller screens */
+      margin: 0 auto; /* Center align the input box */
     }
-
-    #message-input {
-        flex: 1; /* Ensure the input takes up remaining space */
-        margin-right: 10px; /* Maintain spacing with the button */
-    }
-
-    #send-button {
-        flex-shrink: 0; /* Prevent the button from shrinking */
-    }
-}
-
+  }
 #message-input {
     flex: 1;
     padding: 10px;
