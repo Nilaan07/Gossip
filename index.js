@@ -18,7 +18,7 @@ auth.onAuthStateChanged(user => {
     const chat = document.getElementById('chat');
 
     if (!user) {
-        window.location.href = "login.html";
+        window.location.href = "index.html";
     } else {
         const userRef = db.ref('users/' + user.uid);
 
@@ -94,7 +94,7 @@ document.getElementById("message-input").addEventListener("input", function () {
                 
             } else {
                 auth.signOut().then(() => {
-                    window.location.href = "login.html";
+                    window.location.href = "index.html";
                 });
             }
         });
