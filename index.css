@@ -134,7 +134,7 @@ body {
     z-index: 1000; /* Ensure it's always on top */
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .message-input {
     width: 90%; /* Adjust width for smaller screens */
     margin: 0 auto; /* Center align the input box */
