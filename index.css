@@ -176,7 +176,4 @@ body {
     cursor: not-allowed; /* Disable cursor */
 }
 
-/* Reset background when enabled */
-#send-button:not(:disabled) {
-    background: linear-gradient(45deg, #d3eaf2, #458eb8); /* Gradient effect */
-}
+
