@@ -14,6 +14,13 @@
     <div id="chat" style="display: none;">
         <ul id="messages"></ul>
 
+        <!-- Date and Time input for Desktop (using datetime-local) -->
+<input type="datetime-local" id="message-date-time" name="message-date-time" />
+
+<!-- Fallback Date and Time input for Mobile (simple text input or custom date picker) -->
+<input type="text" id="message-date-time-mobile" name="message-date-time" placeholder="Enter date and time" />
+
+
         <form id="message-form">
             <input id="message-input" type="text" placeholder="Type your message" />
             <button id="send-button" type="submit">Send</button>
