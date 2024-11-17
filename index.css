@@ -139,6 +139,9 @@ body {
     width: 90%; /* Adjust width for smaller screens */
     margin: 0 auto; /* Center align the input box */
   }
+    #message-form {
+        width: 50%; /* Make the form width fit the screen */
+    }
 }
 
 #message-input {
