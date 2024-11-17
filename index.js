@@ -43,21 +43,38 @@ document.getElementById("message-input").addEventListener("input", function () {
     }
 });
 
-                function sendMessage(e) {
-                    e.preventDefault();
-                    const messageInput = document.getElementById("message-input");
-                    const message = messageInput.value.trim(); // Trim whitespace
-                    if (!message) return; // Prevent empty messages from being sent
-                
-                    messageInput.value = ""; // Clear the input field
-                    document.getElementById("send-button").disabled = true; // Disable the button
-                
-                    db.ref("messages/" + Date.now()).set({
-                        username: username,
-                        message: message,
-                        timestamp: Date.now(),
-                    });
-                }
+function sendMessage(e) {
+    e.preventDefault();
+    
+    const messageInput = document.getElementById("message-input");
+    const sendButton = document.getElementById("send-button");
+    const message = messageInput.value.trim(); // Trim whitespace
+    
+    if (!message) return; // Prevent empty messages from being sent
+    
+    messageInput.value = ""; // Clear the input field
+    sendButton.disabled = true; // Disable the button to prevent multiple submissions
+
+    // Simulate a database write operation (adjust based on your actual code)
+    db.ref("messages/" + Date.now()).set({
+        username: username,
+        message: message,
+        timestamp: Date.now(),
+    }).then(() => {
+        // Re-enable the send button and reset its background once the message is saved
+        sendButton.disabled = false;
+        sendButton.style.background = 'linear-gradient(45deg, #d3eaf2, #458eb8)'; // Reset background
+        
+        // Optionally, you can also focus the input field again after the message is sent
+        messageInput.focus();
+    }).catch((error) => {
+        // In case of an error, re-enable the button and log the error
+        sendButton.disabled = false;
+        sendButton.style.background = 'linear-gradient(45deg, #d3eaf2, #458eb8)'; // Reset background
+        console.error("Error sending message:", error);
+    });
+}
+
                 
 
                 document.getElementById("message-form").addEventListener("submit", sendMessage);
