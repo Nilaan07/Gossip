@@ -1,0 +1,174 @@
+/* Global Styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0f4f8, #d9e4f1);
+}
+
+/* Login Page Styles */
+#login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+/* Title for Login Page */
+#login-title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Button Styles */
+#google-login-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #5a9bd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+#google-login-btn img {
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+#google-login-btn:hover {
+    background-color: #4a8dc3;
+}
+
+/* Chat Page Styles (Keep old design) */
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    height: 80vh;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: auto;
+    position: relative;
+}
+
+#chat-title {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    padding: 15px;
+    background-color: #f7f9fc;
+    border-bottom: 2px solid #e3e8ee;
+    position: fixed; /* Stick to the top */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
+    width: 100%; /* Cover full width */
+    z-index: 1000; /* Ensure it appears on top of other elements */
+    margin: 0; /* Ensure no margin above or around it */
+    box-sizing: border-box; /* Include padding and border in width/height */
+}
+
+#messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 45px 20px 20px; /* Add top padding to create space under the title */
+    background-color: #fafbfc;
+    box-sizing: border-box; 
+    padding-bottom: 70px;/* Ensure padding doesn't affect overall height */
+}
+
+
+#messages li {
+    list-style-type: none;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#messages li.sent {
+    background-color: #d3eaf2;
+    text-align: right;
+}
+
+#messages li.receive {
+    background-color: #e9f0f4;
+    text-align: left;
+}
+
+.timestamp {
+    font-size: 0.8em;
+    color: #888;
+}
+
+#message-form {
+    display: flex;
+    border-top: 2px solid #e3e8ee;
+    padding: 10px;
+    background-color: #f7f9fc;
+    position: fixed; /* Fixed at the bottom */
+    align-items: center; /* Ensure vertical alignment */
+    bottom: 0; /* Stick it to the bottom of the screen */
+    width: 30%; /* Full width */
+    box-sizing: border-box; /* Include padding in width */
+    z-index: 1000; /* Ensure it's always on top */
+}
+
+#message-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccd1d9;
+    border-radius: 5px;
+    margin-right: 10px;
+    
+}
+
+@media (max-width: 600px) {
+    #message-input {
+        width: 100%; /* Make input full width on smaller screens */
+    }
+}
+
+
+#send-button {
+    padding: 12px 20px;
+    font-size: 1em;
+    background: linear-gradient(45deg, #d3eaf2, #458eb8); /* Gradient effect */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#send-button:hover {
+    background: linear-gradient(45deg, #063284, #0dc9da); /* Darker gradient on hover */
+    transform: scale(1.05); /* Slight grow effect */
+}
+
+#send-button:disabled  {
+    background: #d1d1d1; /* Grey when disabled */
+    cursor: not-allowed; /* Disable cursor */
+}
