@@ -26,7 +26,7 @@ document.getElementById('google-login-btn').addEventListener('click', () => {
             userRef.once('value', (snapshot) => {
                 if (snapshot.exists()) {
                     // If the user exists, redirect to the main chat page
-                    window.location.href = "index.html";
+                    window.location.href = "home.html";
                 } else {
                     // If user is new, prompt for a username
                     const username = prompt("Welcome! Please create a username:");
@@ -36,7 +36,7 @@ document.getElementById('google-login-btn').addEventListener('click', () => {
                             username: username,
                             email: user.email
                         }).then(() => {
-                            window.location.href = "index.html";
+                            window.location.href = "home.html";
                         });
                     } else {
                         alert("Username is required to proceed.");
