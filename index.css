@@ -134,6 +134,13 @@ body {
     z-index: 1000; /* Ensure it's always on top */
 }
 
+@media (max-width: 768px) {
+  .message-input {
+    width: 90%; /* Adjust width for smaller screens */
+    margin: 0 auto; /* Center align the input box */
+  }
+}
+
 #message-input {
     flex: 1;
     padding: 10px;
@@ -144,11 +151,7 @@ body {
     
 }
 
-@media (max-width: 600px) {
-    #message-input {
-        width: 100%; /* Make input full width on smaller screens */
-    }
-}
+
 
 
 #send-button {
